@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <script type="text/javascript" src="build/js/vendor.min.js"></script>
+    <!-- <script src="bower_components/moment/min/moment.min.js"></script> -->
+    <script type="text/javascript" src="build/js/app.js"></script>
+    <title>Galactic Age Calculator</title>
+  </head>
+  <body>
+    <h3>Well look at the time! </h3>
+    <h3 id="time"></h3>
+    
+    <form id="ageForm">
+      <label for="age">Enter age:</label>
+      <input id="age" type="number" pattern="[0-9]*$">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    <form id="birthdayDayForm">
+      <label for="birthDay">Enter birthdate in MM/DD/YYYY format:</label>
+      <input id="birthDay" type='date'>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    <form id='dateform1'>
+      <label for="day">Day</label>
+      <input id='day' type="number">
+      <label for="month">Month</label>
+      <input id='month' type="number">
+      <label for="year">Year</label>
+      <input type="number" id='year'>
+    </form>
+
+    <!-- <form id="signup">
+      <label for="email">Enter your email:</label>
+      <input id="email" type="text">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form> -->
+    <ul id="solution"></ul>
+  </body>
+</html>
