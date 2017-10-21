@@ -1,50 +1,71 @@
-export class HungryBear {
-  constructor(name) {
-    this.name = name;
-    this.foodLevel = 10;
-  }
-
-  setHunger() {
-    setInterval(() => {
+export let bear = {
+  foodLevel: 10,
+  setHunger: function() {
+    const hungerInterval = setInterval(() => {
       this.foodLevel--;
+      if (this.didYouGetEaten() == true) {
+        clearInterval(hungerInterval);
+        return 'You got eaten';
+      }
     }, 1000);
-  }
-
-  didYouGetEaten() {
+  },
+  didYouGetEaten: function() {
     if (this.foodLevel > 0) {
       return false;
     } else {
       return true;
     }
+  },
+  feed: function(amount) {
+    let that = this;
+    return function(food) {
+      that.foodLevel += amount
+      return `The bear ate the ${food}! Food level goes up ${amount}!`
+    }
   }
+  // ,
+  //
+  // eatSmall: function(food) {
+  //   this.foodLevel += 5
+  //   return `The bear ate the ${food}! Food level goes up by 5`
+  // }
+  // bear.feed(5);
 
-  feed() {
-    this.foodLevel = 10;
-  }
+
+};
+bear.eatSmall = bear.feed(5);
 
 
-}
 
-// var moment = require('moment');
-//
-// export class Calculator {
-//   constructor(age) {
-//     this.age = age;
-//     this.ageSecondsRough = age*365*24*60*60;
-//     this.birthDate = null;
-//     this.timePassed = null;
-//     this.timePassedSeconds = null;
-//     this.dateNow = null;
+// the old good code is below in es6 style
+// export class HungryBear {
+//   constructor(name) {
+//     this.name = name;
+//     this.foodLevel = 10;
 //   }
 //
-//   makeBirthday(date) {
-//
-//
-//     var start = moment(date).format("MM/DD/YYYY");
-//     this.birthDate = start;
-//     console.log(this.ageSecondsRough);
+//   setHunger() {
+//     setInterval(() => {
+//       this.foodLevel--;
+//     }, 1000);
 //   }
 //
+//   didYouGetEaten() {
+//     if (this.foodLevel > 0) {
+//       return false;
+//     } else {
+//       return true;
+//     }
+//   }
 //
+//   feed() {
+//     this.foodLevel = 10;
+//   }
+//
+//   function welcome(salutation) {
+//     return function(yourName) {
+//       return `${salutation}, nice to meet you, ${yourName}`
+//     }
+//   }
 //
 // }
