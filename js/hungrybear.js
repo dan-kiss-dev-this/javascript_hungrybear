@@ -33,8 +33,13 @@ export let bear = {
 
 
 };
-bear.eatSmall = bear.feed(5);
+// bear.eatSmall = bear.feed(5);
 bear.eatHuge = bear.feed(15);
+
+bear.eatSmall = function(food) {
+      this.foodLevel += 5
+      return `The bear ate the ${food}! Food level goes up 5!`
+    }
 
 
 
