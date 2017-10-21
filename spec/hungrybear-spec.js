@@ -56,6 +56,8 @@ describe('HungryBear', function() {
     // expect.fuzzy.eatSmall('blueberries').toEqual('the bear ate the blueberries, food level goes up by 5');
     fuzzy.eatSmall('blueberries');
     expect(fuzzy.foodLevel).toEqual(15);
+    fuzzy.eatHuge('cow');
+    expect(fuzzy.foodLevel).toEqual(30);
   });
 //
 //

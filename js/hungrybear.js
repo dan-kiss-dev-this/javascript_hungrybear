@@ -34,6 +34,7 @@ export let bear = {
 
 };
 bear.eatSmall = bear.feed(5);
+bear.eatHuge = bear.feed(15);
 
 
 
