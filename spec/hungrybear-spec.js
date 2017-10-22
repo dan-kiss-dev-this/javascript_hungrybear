@@ -56,6 +56,9 @@ describe('HungryBear', function() {
     // expect.fuzzy.eatSmall('blueberries').toEqual('the bear ate the blueberries, food level goes up by 5');
     fuzzy.eatSmall('blueberries');
     expect(fuzzy.foodLevel).toEqual(15);
+    alert('ran spec to eat blueberries');
+    console.log(fuzzy.foodLevel);
+    // debugger;
     fuzzy.eatHuge('you can write whatever here you need paranthesis since this is callback in line 21 of hungrybear.js ');
     expect(fuzzy.foodLevel).toEqual(30);
   });
