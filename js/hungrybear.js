@@ -1,14 +1,39 @@
 export let bear = {
   foodLevel: 10,
+  // setHunger: function() {
+  //   const hungerInterval = setInterval(() => {
+  //     this.foodLevel--;
+  //     if (this.didYouGetEaten() == true) {
+  //       clearInterval(hungerInterval);
+  //       return 'You got eaten';
+  //     }
+  //   }, 1000);
+  // },
+
   setHunger: function() {
-    const hungerInterval = setInterval(() => {
-      this.foodLevel--;
-      if (this.didYouGetEaten() == true) {
-        clearInterval(hungerInterval);
-        return 'You got eaten';
-      }
-    }, 1000);
+    console.log(this.foodLevel);
+    if (this.foodLevel <= 10) {
+      console.log('the one');
+      const hungerInterval = setInterval(() => {
+        this.foodLevel--;
+        if (this.didYouGetEaten() == true) {
+          clearInterval(hungerInterval);
+          return 'You got eaten';
+        }
+      }, 1000);
+    } else {
+      console.log('the two');
+      const hungerInterval2 = setInterval(() => {
+        this.foodLevel-=1;
+        if (this.didYouGetEaten() == true) {
+          clearInterval(hungerInterval2);
+          return 'You got eaten...slowly'
+        }
+      }, 2000);
+    }
   },
+
+
   didYouGetEaten: function() {
     if (this.foodLevel > 0) {
       return false;
@@ -39,7 +64,7 @@ bear.eatHuge = bear.feed(15);
 bear.eatSmall = function(food) {
       this.foodLevel += 5
       return `The bear ate the ${food}! Food level goes up 5!`
-    }
+    };
 
 
 
