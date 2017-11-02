@@ -3,14 +3,15 @@ let fuzzy = bear;
 
 $(document).ready(function() {
   $('#feedBear').click(function() {
-    // console.log(fuzzy.foodLevel);
     fuzzy.setHunger()
   });
 
   $('#theFoodSmall').click(function() {
-    fuzzy.feed(5)();
-    // fuzzy.feedSmall();
+    fuzzy.eatSmall();
     console.log(fuzzy.foodLevel);
+    if (fuzzy.FoodLevel == 0) {
+      console.log('shit')
+    }
   });
 
 });
