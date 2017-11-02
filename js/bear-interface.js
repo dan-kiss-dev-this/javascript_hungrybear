@@ -7,13 +7,10 @@ $(document).ready(function() {
     fuzzy.setHunger()
   });
 
-  $('#theFoodSmall').click({function() {
-    fuzzy.eatHuge('x');
+  $('#theFoodSmall').click(function() {
+    fuzzy.feed(5)();
+    // fuzzy.feedSmall();
     console.log(fuzzy.foodLevel);
-  }
-
-  })
-
-
+  });
 
 });
