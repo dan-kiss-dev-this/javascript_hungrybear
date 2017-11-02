@@ -2,9 +2,9 @@ export let bear = {
   foodLevel: 10,
 
   setHunger: function() {
-    console.log(this.foodLevel);
+    console.log('Fuzzy has '+this.foodLevel, ' units of food');
     if (this.foodLevel <= 10) {
-      // console.log('the one');
+      console.log('wow it got hungry');
       const hungerInterval = setInterval(() => {
         this.foodLevel--;
         if (this.didYouGetEaten() == true) {
@@ -14,11 +14,11 @@ export let bear = {
         }
       }, 1000);
     } else {
-      console.log('the two');
-      const hungerInterval2 = setInterval(() => {
+      console.log('it just wants a little more...');
+      const hungerInterval = setInterval(() => {
         this.foodLevel-=1;
         if (this.didYouGetEaten() == true) {
-          clearInterval(hungerInterval2);
+          clearInterval(hungerInterval);
           return 'You got eaten...slowly'
         }
       }, 2000);
@@ -30,7 +30,7 @@ export let bear = {
       console.log(this.foodLevel, 'Hmm, the bear should be fed more')
       return false;
     } else {
-      console.log('Feed the bear self!!!')
+      console.log('Fuzzy looks at you with hungry eyes, game over')
       return true;
     }
   },

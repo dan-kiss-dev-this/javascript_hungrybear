@@ -4,14 +4,15 @@ let fuzzy = bear;
 $(document).ready(function() {
   $('#feedBear').click(function() {
     fuzzy.setHunger()
+    // if (fuzzy.FoodLevel == 0) {
+    //   console.log('no food left')
+    // }
   });
 
   $('#theFoodSmall').click(function() {
     fuzzy.eatSmall();
-    console.log(fuzzy.foodLevel);
-    if (fuzzy.FoodLevel == 0) {
-      console.log('shit')
-    }
+    console.log('Fuzzy has a food level of '+fuzzy.foodLevel);
+    // }
   });
 
 });
