@@ -13,11 +13,12 @@ export let bear = {
   setHunger: function() {
     console.log(this.foodLevel);
     if (this.foodLevel <= 10) {
-      console.log('the one');
+      // console.log('the one');
       const hungerInterval = setInterval(() => {
         this.foodLevel--;
         if (this.didYouGetEaten() == true) {
           clearInterval(hungerInterval);
+          console.log('You got eaten')
           return 'You got eaten';
         }
       }, 1000);
@@ -36,8 +37,10 @@ export let bear = {
 
   didYouGetEaten: function() {
     if (this.foodLevel > 0) {
+      console.log(this.foodLevel, 'Hmm, the bear should be fed more')
       return false;
     } else {
+      console.log('Feed the bear self!!!')
       return true;
     }
   },
