@@ -27,7 +27,7 @@ export let bear = {
 
   didYouGetEaten: function() {
     if (this.foodLevel > 0) {
-      console.log(this.foodLevel, 'Hmm, the bear should be fed more')
+      console.log(this.foodLevel, 'Food level. Hmm, the bear should be fed more')
       return false;
     } else {
       console.log('Fuzzy looks at you with hungry eyes, game over')
